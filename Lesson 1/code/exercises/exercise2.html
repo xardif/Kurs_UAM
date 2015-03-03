@@ -24,19 +24,39 @@
         var arr = [];
         
         function countBoolean() {
-            return 0;
+            var counter = 0;
+            arr.forEach(function(entry){
+                if(typeof entry == "boolean")
+                    counter += 1;
+            });
+            return counter;
         }
         
         function countNumber() {
-            return 0;
+            var counter = 0;
+            arr.forEach(function(entry){
+                if(typeof entry == "number")
+                    counter += 1;
+            });
+            return counter;
         }
         
         function countString() {
-            return 0;
+            var counter = 0;
+            arr.forEach(function(entry){
+                if(typeof entry == "string")
+                    counter += 1;
+            });
+            return counter;
         }
-        
+
         function countFalsy() {
-            return 0;
+            var counter = 0;
+            arr.forEach(function(entry){
+                if(!entry)
+                    counter += 1;
+            });
+            return counter;
         }
         
         function refresh() {

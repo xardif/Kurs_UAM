@@ -7,13 +7,13 @@
 <body>
     
     <p>
-        Standard Books: <br />
+        Standard Books: <label id="standardBooksLabel"></label><br />
         Free: <label id="standardFreeLabel"></label> <br />
         Borrowed: <label id="standardBorrowedLabel"></label>
     </p>
     
     <p>
-        VIP Books: <br />
+        VIP Books: <label id="vipBooksLabel"></label><br />
         Free: <label id="vipFreeLabel"></label> <br />
         Borrowed: <label id="vipBorrowedLabel"></label>
     </p>
@@ -41,35 +41,56 @@
         
         
         function addStandardBook(title) {
-            //!!!!!!!!!
+        	var book = {
+	            title: title,
+	            isBorrowed: false
+        	};
+            library.standards.push(book);
         }
         
         function addVipBook(title) {
-            //!!!!!!!!!
+        	var book = {
+	            title: title,
+	            isBorrowed: false
+        	};
+            library.vip.push(book);
         }
         
         function borrowStandardBook(title) {
-            //!!!!!!!!!
+            library.standards.filter(function(val){
+            	return val.title == title;
+            })[0].isBorrowed = true;
         }
         
         function borrowVipBook(title) {
-            //!!!!!!!!!
-        }
-        
-        
+            library.vip.filter(function(val){
+            	return val.title == title;
+            })[0].isBorrowed = true;
+        }        
+
         function printStandards() {
-            var free = 's', borrowed = 'sb';
-            
-            //!!!!!!!!!
-            
+            var free = '', borrowed = '';          
+
+            library.standards.forEach(function(book){
+	    		if(book.isBorrowed)
+	        		borrowed += book.title  + ", ";
+	        	else 
+	        		free += book.title  + ", ";
+	        });
+
             document.getElementById("standardFreeLabel").innerHTML = free;
             document.getElementById("standardBorrowedLabel").innerHTML = borrowed;
         }
         
         function printVip() {
-            var free = 'v', borrowed = 'vb';
+            var free = '', borrowed = '';
             
-            //!!!!!!!!!
+            library.vip.forEach(function(book){
+	    		if(book.isBorrowed)
+	        		borrowed += book.title  + ", ";
+	        	else 
+	        		free += book.title  + ", ";
+	        });
             
             document.getElementById("vipFreeLabel").innerHTML = free;
             document.getElementById("vipBorrowedLabel").innerHTML = borrowed;
