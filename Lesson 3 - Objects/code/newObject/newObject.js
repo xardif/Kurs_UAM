@@ -4,7 +4,9 @@
 	}
 
 	function newObject() {
-		return new arguments[0](Array.prototype.slice.call(arguments, 1));
+		return new arguments[0](
+			Array.prototype.slice.call(arguments, 1)
+			);
 	}
 
 	global.UAM.newObject = newObject;

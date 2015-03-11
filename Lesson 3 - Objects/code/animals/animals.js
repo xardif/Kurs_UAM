@@ -2,16 +2,15 @@
 	var Cat = null, Bird = null, Worm = null;
 
 	var Animal = {
+		canEat : [],
 		eat: function(animal){
-			var thisPrototype = Object.getPrototypeOf(this);
 			var animalPrototype = Object.getPrototypeOf(animal);
 
-			if(thisPrototype === Cat && animalPrototype === Bird ||
-				thisPrototype === Bird && animalPrototype === Worm){
+			if(this.canEat.find(function(elem){ return elem === animalPrototype;})){
 				return "Mniam!";
 			} else {
 				return "Blee!";
-			}
+			}		
 		}
 	}
 
@@ -19,11 +18,12 @@
 	Bird = Object.create(Animal);
 	Worm = Object.create(Animal);
 
+	Cat.canEat = [Bird];
+	Bird.canEat = [Worm];
+
 	if (!global.UAM) {
 		global.UAM = {};
 	}
-
-
 
 	global.UAM.Cat = Cat;
 	global.UAM.Bird = Bird;
