@@ -4,9 +4,13 @@
 	}
 
 	function newObject() {
-		return new arguments[0](
-			Array.prototype.slice.call(arguments, 1)
-			);
+		var proto = Object.create(arguments[0].prototype);
+		var obj = proto.constructor(Array.prototype.slice.call(arguments, 1));
+		if(obj != undefined){
+			return obj;
+		} else {
+			return proto;
+		}
 	}
 
 	global.UAM.newObject = newObject;
