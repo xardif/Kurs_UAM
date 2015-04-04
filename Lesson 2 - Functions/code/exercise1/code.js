@@ -6,7 +6,6 @@
 	}
 
 	addManyValues = function () {
-<<<<<<< HEAD
 		var argSum = 0;
 		for(var i=0; i < arguments.length; i++){
 			argSum += arguments[i];
@@ -18,9 +17,6 @@
 			} 
 			return argSum2;
 		};
-=======
-
->>>>>>> upstream/summer2015
 	};
 
 	global.UAM.addManyValues = addManyValues;

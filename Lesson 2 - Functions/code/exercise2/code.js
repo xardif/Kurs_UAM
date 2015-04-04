@@ -6,15 +6,11 @@
 	}
 
 	mapArray = function (array, callback, ctx) {
-<<<<<<< HEAD
 		newArray = [];
 		for(var i = 0; i < array.length; i++){
 			newArray[i] = callback.call(ctx,array[i], i, array);
 		}
 		return newArray;
-=======
-
->>>>>>> upstream/summer2015
 	};
 
 	global.UAM.mapArray = mapArray;
