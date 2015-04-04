@@ -1,0 +1,27 @@
+#container{
+    margin: 0 auto;
+    overflow: auto;
+    width:50%;
+}
+
+form{
+    display: inline-block;
+}
+
+#addButton{
+    display: inline-block;
+}
+
+#list{
+    list-style: none;
+    padding: 0;
+}
+
+#list li::before {
+    content: attr(data-id)": ";
+    margin-right: 5px;
+}
+
+.active{
+    font-weight: bold;
+}
