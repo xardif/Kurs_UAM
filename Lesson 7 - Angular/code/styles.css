@@ -57,6 +57,11 @@ body {
 	background: gray;
 }
 
+.list ul li a{
+	float:right;
+	
+}
+
 .ng-scope {
 	border: 2px solid red !important;
 }

@@ -19,9 +19,13 @@
             <input type="text" class="field" ng-model="inputValue"/><button class="submit" ng-click="addNew()">Add</button>
             <ul>
                 <li ng-repeat="element in elements"
-                ng-class="{'inactive': element.status === false}"
-                ng-click="element.status = false">{{element.value}}</li>
+                ng-class="{'inactive': element.status === false}">
+                  <span ng-click="elementClicked(element)">{{element.value}}<span>
+                  <a ng-click="deleteElement(element)">X</a>
+                </li>
+
             </ul>
+            Active/Total : {{active}}/{{total}}
         </div>
     </body>
 </html>
