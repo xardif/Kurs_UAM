@@ -3,6 +3,8 @@
         this.view = view;
         this.actives = 0;
         this.total = 0;
+        this.activesNumberElement  = view.querySelector('#active');
+        this.totalNumberElement = view.querySelector('#total');
         this.refresh();
     };
 
@@ -21,11 +23,8 @@
     }
 
     FV.prototype.refresh = function () {
-        var activesNumber, totalNumber;
-        activesNumber = this.view.querySelector('#active');
-        activesNumber.innerHTML = this.actives;
-        totalNumber = this.view.querySelector('#total');
-        totalNumber.innerHTML = this.total;
+        this.activesNumberElement.innerHTML = this.actives;
+        this.totalNumberElement.innerHTML = this.total;
     }
 
     global.UAM.FooterView = FV;
