@@ -1,9 +1,9 @@
 <div class="addition">
-    <select></select>
+    <select ng-options="o for o in options" ng-model="param.option"></select>
     <div class="color-container">
-        <div class="color-rect red"></div>
-        <div class="color-rect green"></div>
-        <div class="color-rect blue"></div>
-        <div class="color-rect purple"></div>
+        <div class="color-rect red" ng-click="updateColor('red')"></div>
+        <div class="color-rect green" ng-click="updateColor('green')"></div>
+        <div class="color-rect blue" ng-click="updateColor('blue')"></div>
+        <div class="color-rect purple" ng-click="updateColor('purple')"></div>
     </div>
 </div>

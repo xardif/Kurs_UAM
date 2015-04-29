@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myapp">
 
     <head>
         <meta charset="utf-8">
@@ -7,37 +7,37 @@
         <title>Web Applications [UAM]- by Damian Sosnowski</title>
 
         <meta name="author" content="Damian Sosnowski">
-        
+
         <link rel="stylesheet" type="text/css" href="styles.css">
 
         <script src="lib/angular.js"></script>
         <script src="js/app.js"></script>
-        
+
         <!-- add some controllers here-->
         <!-- add some directives here-->
-        
+
     </head>
 
-    <body>
+    <body ng-controller="CarCtrl">
         <p>
-            <button>Add addition</button>
+            <button ng-click="add()">Add addition</button>
         </p>
-        
+
         <p>
             <!-- add display configurator (addition directive) for each of added addition -->
+            <car-addition ng-repeat="addition in additions" param="addition"></car-addition>
         </p>
-        
+
         <hr />
-        
+
         <p>Your car:</p>
-        
+
         <p>
             <ul>
                 <!-- add some summary logic here-->
-                <li>
-                </li>
+                <li ng-repeat="addition in additions">{{addition.color}} {{addition.option}}</li>
             </ul>
         </p>
-        
+
     </body>
 </html>
