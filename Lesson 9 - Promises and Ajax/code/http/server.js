@@ -50,7 +50,7 @@ app.get('/elements/:id', function (req, res) {
 	if (!element) {
 		res.status(404).send('Record not found');
 	} else {
-		element.count = req.body.count;
+		element.count++;
 		res.json(element);
 	}
 });
